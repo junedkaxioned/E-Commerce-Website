@@ -118,11 +118,11 @@ li {
 =================================*/
 
 header {
-  padding: 16px 0;
   width: 100%;
-  background-color: transparent;
-  position: fixed;
+  padding: 16px 0;
+  position: fixed;  
   z-index: 9999;
+  background-color: transparent;
 }
 
 header.active {
@@ -136,8 +136,8 @@ header.active .list a { color: #fff; }
 
 header .wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .nav-lists {
@@ -188,7 +188,9 @@ header.active .list a:hover,
 /* Common Style start*/
 .banner-top-heading,
 .banner-heading,
-.specification { 
+.specification,
+.section-heading,
+.product-name { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -253,6 +255,78 @@ header.active .list a:hover,
   color: #DF453E;
 }
 /* Banner Section CSS End */
+
+/* New Arrival Css Start */
+.new-arrivales-section { padding: 100px 0; }
+
+.section-heading { 
+  padding: 34px 0;  
+  color: #161616;
+  font-size: 50px; 
+  text-align: center;
+}
+
+.sliders {
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  min-width: 1188px;
+}
+
+.arrivales-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.arrivales { margin: 10px; }
+
+.product-content {
+  padding: 12px 0;
+}
+
+.product-category {
+  color: #A5A7AB;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.product-name {
+  padding: 8px 0;
+  color: #2C2526;
+  font-size: 14px;
+}
+
+.star {
+  text-indent: -99999px;
+}
+
+.stars { 
+  padding-bottom: 5px;
+  display: flex; 
+}
+
+.star::after {
+  content: "\f005";
+  color: #4B4F58;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+
+.empty-star::after { content: "\f006"; }
+
+.product-price {
+  color: #5A5558;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* New Arrival Css End */
 
 
 /*=================================
