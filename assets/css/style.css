@@ -339,24 +339,21 @@ header.active .list a:hover,
 }
 
 .mountain-bikes {
-  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(22,22,22,.9) 60%), 
+  background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(22,22,22,.9) 60%), 
               url("../../assets/images/moutain-bike.jpg") no-repeat center;
   background-size: cover;
-
 }
 
 .city-bikes {
-  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(22,22,22,.9) 60%), 
+  background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(22,22,22,.9) 60%), 
               url("../../assets/images/city-bike.jpg") no-repeat center;
   background-size: cover;
-
 }
 
 .speciality-bikes {
-  background: linear-gradient(to bottom, rgba(0,0,0,.5) , rgba(22,22,22,.9) 40%), 
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%), 
               url("../../assets/images/speciality-bike.jpg") no-repeat center;
   background-size: cover;
-
 }
 
 .discover-content { padding: 35px 62% 35px 0; }
@@ -383,8 +380,11 @@ header.active .list a:hover,
 .discover-specs-list {  flex-basis: 47%; }
 .discover-specs-list::before { color: #DF453E; }
 .discover-content .btn { margin-top: 10px;} 
-
 /* Discover Section Css End */
+
+/* Why Choose Us Section Start */
+
+/* Why Choose Us Section End */
 
 
 
