@@ -196,7 +196,9 @@ header.active .list a:hover,
 .kryo-spec figcaption h3,
 .kryo-spec figcaption h4,
 .watch-video,
-.content-head { 
+.content-head,
+.kryo-top-head,
+.kryo-heading { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -363,7 +365,7 @@ header.active .list a:hover,
   font-size: 36px;
 }
 
-
+.kryo-para,
 .kryo-spec figcaption p,
 .discover-para {
   font-weight: 600;
@@ -519,6 +521,25 @@ header.active .list a:hover,
 }
 /* Join Programme Section End */
 
+/* KRYO X26 MTB Section CSS Start */
+.kryo-x26 {
+  background: linear-gradient(to bottom, transparent 30%, rgba(22,22,22,.9) 90%),
+              url("../../assets/images/bike-hero.jpg") no-repeat center;
+  background-size: cover; 
+  color: #fff;  
+  text-align: center;
+}
+
+.kryo-x26 .wrapper { padding: 200px 150px 150px; }
+.kryo-top-head { font-size: 26px; } 
+
+.kryo-heading { 
+  padding: 36px 0 30px;
+  font-size: 50px;
+}
+
+.shop-now { margin: 40px; }
+/* KRYO X26 MTB Section CSS End */
 
 /*=================================
   main styling ends here
