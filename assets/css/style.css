@@ -192,7 +192,9 @@ header.active .list a:hover,
 .section-heading,
 .product-name,
 .discover-top-heading,
-.discover-heading { 
+.discover-heading,
+.kryo-spec figcaption h3,
+.kryo-spec figcaption h4 { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -289,10 +291,7 @@ header.active .list a:hover,
 }
 
 .arrivales { margin: 10px; }
-
-.product-content {
-  padding: 12px 0;
-}
+.product-content { padding: 12px 0; }
 
 .product-category {
   color: #A5A7AB;
@@ -306,9 +305,7 @@ header.active .list a:hover,
   font-size: 14px;
 }
 
-.star {
-  text-indent: -99999px;
-}
+.star { text-indent: -99999px; }
 
 .stars { 
   padding-bottom: 5px;
@@ -364,6 +361,8 @@ header.active .list a:hover,
   font-size: 36px;
 }
 
+
+.kryo-spec figcaption p,
 .discover-para {
   font-weight: 600;
   line-height: 1.8;
@@ -383,7 +382,42 @@ header.active .list a:hover,
 /* Discover Section Css End */
 
 /* Why Choose Us Section Start */
+.why-choose-section { padding: 90px 0 45px; }
 
+.kryo-specification {
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #fff;
+}
+
+.light-weight,
+.lifetime-warrenty {
+  flex-basis: 49%;
+}
+
+.service-network, 
+.assembled-delivery, 
+.free-first {
+  flex-basis: 32.1%;
+}  
+
+.kryo-spec { position: relative; }
+
+.kryo-spec figcaption {
+  padding: 35px;
+  position: absolute;
+  bottom: 0%; 
+  left: 0%;
+} 
+
+.kryo-spec figcaption h3 {
+  font-size: 28px;
+  padding: 10px 0;
+}
+
+.kryo-spec figcaption h4 { font-size: 18px;}
 /* Why Choose Us Section End */
 
 
