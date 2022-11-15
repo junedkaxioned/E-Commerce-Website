@@ -194,7 +194,9 @@ header.active .list a:hover,
 .discover-top-heading,
 .discover-heading,
 .kryo-spec figcaption h3,
-.kryo-spec figcaption h4 { 
+.kryo-spec figcaption h4,
+.watch-video,
+.content-head { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -454,6 +456,68 @@ header.active .list a:hover,
   text-align: center;
 }
 /* Explore Accessories Section Css End */
+
+/* Join Programme Section Start */
+.goecobiking-section {
+  padding: 70px 0 58px;
+  background-color: #F5F5F5;
+}
+
+.goecobiking-section .wrapper { padding: 0 7.5%; }
+
+.join-programme {  
+  padding: 412px 50px 58px;
+  margin: 22px 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%),
+              url("../../assets/images/join-programme.jpg") no-repeat center;
+  background-size: cover; 
+  color: #fff;           
+}
+
+.watch-video { font-size: 26px; }
+
+.video { 
+  display: inline-block;
+  text-indent: -99999px; 
+}
+
+.video::after {
+  content: "\f04b";
+  width: 56px;
+  height: 56px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "FontAwesome";
+  font-size: 24px;
+  text-indent: 0; 
+  float: left;
+}
+
+.join-programme-content {
+  padding: 38px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.join-left { flex-basis: 46%; }
+
+.join-left p {
+  padding: 15px 0;
+  color: #6e686a;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.content-head {
+  font-size: 26px;
+  color: #161616;
+}
+/* Join Programme Section End */
 
 
 /*=================================
