@@ -190,7 +190,9 @@ header.active .list a:hover,
 .banner-heading,
 .specification,
 .section-heading,
-.product-name { 
+.product-name,
+.discover-top-heading,
+.discover-heading { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -238,12 +240,14 @@ header.active .list a:hover,
   gap: 10px;
 }
 
+.discover-specs-list,
 .specs-list {
   font-size: 16px;
   font-weight: 600;
 }
 
-.specs-list::before {
+.specs-list::before,
+.discover-specs-list::before {
   content: "\f192";
   margin-right: 15px;
   font-family: "FontAwesome";
@@ -327,6 +331,61 @@ header.active .list a:hover,
   font-weight: 600;
 }
 /* New Arrival Css End */
+
+/* Discover Section Css Start */
+.discover-section {
+  padding: 100px 0 96px;
+  color: #fff;
+}
+
+.mountain-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(22,22,22,.9) 60%), 
+              url("../../assets/images/moutain-bike.jpg") no-repeat center;
+  background-size: cover;
+
+}
+
+.city-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(22,22,22,.9) 60%), 
+              url("../../assets/images/city-bike.jpg") no-repeat center;
+  background-size: cover;
+
+}
+
+.speciality-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.5) , rgba(22,22,22,.9) 40%), 
+              url("../../assets/images/speciality-bike.jpg") no-repeat center;
+  background-size: cover;
+
+}
+
+.discover-content { padding: 35px 62% 35px 0; }
+.discover-top-heading { font-size: 19px; }
+
+.discover-heading {
+  padding: 32px 0;
+  font-size: 36px;
+}
+
+.discover-para {
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.discover-specs {
+  width: 100%;
+  padding: 44px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+} 
+
+.discover-specs-list {  flex-basis: 47%; }
+.discover-specs-list::before { color: #DF453E; }
+.discover-content .btn { margin-top: 10px;} 
+
+/* Discover Section Css End */
+
 
 
 /*=================================
