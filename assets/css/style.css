@@ -382,10 +382,13 @@ header.active .list a:hover,
 /* Discover Section Css End */
 
 /* Why Choose Us Section Start */
-.why-choose-section { padding: 90px 0 45px; }
+.why-choose-section { 
+  padding: 90px 0 45px;
+  background: linear-gradient(to bottom, #F5F5F5 82%, #fff 18% );
+}
 
 .kryo-specification {
-  margin: 0 10px;
+  margin: 30px 10px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -420,6 +423,37 @@ header.active .list a:hover,
 .kryo-spec figcaption h4 { font-size: 18px;}
 /* Why Choose Us Section End */
 
+/* Explore Accessories Section Css Start */
+.explore-section { padding: 35px 0 98px; }
+
+.explore-container {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gloves-size {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.size {
+  padding: 5px 10px;
+  border: 1px solid #EBEBEB;
+  color: #80839B;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.view-more-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+/* Explore Accessories Section Css End */
 
 
 /*=================================
