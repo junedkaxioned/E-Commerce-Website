@@ -101,6 +101,11 @@ li {
   list-style-type: none;
 }
 
+@font-face {
+  font-family:  "boldoy";
+  src: url(../../assets/font/boldoy.regular.ttf);
+}
+
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
@@ -113,7 +118,7 @@ li {
 =================================*/
 
 header {
-  padding: 15px 0;
+  padding: 16px 0;
   width: 100%;
   background-color: transparent;
   position: fixed;
@@ -171,6 +176,7 @@ header.active .list a:hover,
   font-family: "FontAwesome";
   font-size: 32px;
 }
+
 /*=================================
   Header styling ends here
 =================================*/  
@@ -179,6 +185,74 @@ header.active .list a:hover,
   main styling starts here
 =================================*/
 
+/* Common Style start*/
+.banner-top-heading,
+.banner-heading,
+.specification { 
+  font-family: "boldoy"; 
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 12px 23px;
+  border: 2px solid #DF453E;
+  background-color: #DF453E;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: .5s;
+}
+/* Common Style End */
+
+/* Banner Section CSS Start */
+.banner-section {
+  width: 100%;
+  background-color: #FFCCCC;
+  background: linear-gradient(to right, rgba(0,	0,	0, 0.6) 50%, rgba(223,	69,	62, 0.6) 50%), 
+              url("../../assets/images/bike-hero.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.banner-content { padding: 98px 60% 88px 0; }
+.banner-top-heading { font-size: 26px; }
+
+.banner-heading { 
+  padding: 15px 0;
+  font-size: 74px; 
+  line-height: 1.14;
+}
+
+.specification {
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.specs {
+  margin-bottom: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.specs-list {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.specs-list::before {
+  content: "\f192";
+  margin-right: 15px;
+  font-family: "FontAwesome";
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #DF453E;
+}
+/* Banner Section CSS End */
 
 
 /*=================================
