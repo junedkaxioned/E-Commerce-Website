@@ -198,7 +198,8 @@ header.active .list a:hover,
 .watch-video,
 .content-head,
 .kryo-top-head,
-.kryo-heading { 
+.kryo-heading,
+.footer-head { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -523,14 +524,14 @@ header.active .list a:hover,
 
 /* KRYO X26 MTB Section CSS Start */
 .kryo-x26 {
-  background: linear-gradient(to bottom, transparent 30%, rgba(22,22,22,.9) 90%),
+  background: linear-gradient(to bottom, rgba(22,22,22,.5) 30%, rgba(22,22,22) 100%),
               url("../../assets/images/bike-hero.jpg") no-repeat center;
   background-size: cover; 
   color: #fff;  
   text-align: center;
 }
 
-.kryo-x26 .wrapper { padding: 200px 150px 150px; }
+.kryo-x26 .wrapper { padding: 175px 150px 130px; }
 .kryo-top-head { font-size: 26px; } 
 
 .kryo-heading { 
@@ -549,8 +550,63 @@ header.active .list a:hover,
   footer styling starts here
 =================================*/ 
 
+footer {
+  background-color: #161616;
+  padding: 100px 0 0; 
+  color: #fff;
+}
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
 
+.footer-container li {
+  flex-basis: 25%;
+}
+
+.bottom-footer {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #2D2D2D;
+}
+
+.bottom-footer .wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.icon {
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  text-indent: -9999px;
+}
+
+.facebook::after { content: "\f082"; }
+.instagram::after { content: "\f16d"; }
+.twitter::after { content: "\f099"; }
+.youtube::after { content: "\f16a"; }
+
+.youtube::after,
+.twitter::after, 
+.instagram::after,
+.facebook::after { 
+  float: left;
+  text-indent: 0;
+}
  /*=================================
   footer styling ends here
 =================================*/ 
