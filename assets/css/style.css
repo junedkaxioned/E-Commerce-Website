@@ -298,6 +298,16 @@ header.active .list a:hover,
 .arrivales { margin: 10px; }
 .product-content { padding: 12px 0; }
 
+.arrivales img { 
+  cursor: pointer; 
+  transition: .5s;
+}
+
+.arrivales img:hover {
+  opacity: .7;
+  transition: .5s;
+}
+
 .product-category {
   color: #A5A7AB;
   font-size: 14px;
@@ -450,8 +460,14 @@ header.active .list a:hover,
   padding: 5px 10px;
   border: 1px solid #EBEBEB;
   color: #80839B;
+  cursor: pointer;
   font-size: 12px;
   font-weight: 600;
+}
+
+.size:hover {
+  border: 1px solid #DF453E;
+  color: #DF453E;
 }
 
 .view-more-btn {
@@ -482,6 +498,7 @@ header.active .list a:hover,
 .video { 
   display: inline-block;
   text-indent: -99999px; 
+  cursor: pointer;
 }
 
 .video::after {
@@ -496,8 +513,14 @@ header.active .list a:hover,
   align-items: center;
   font-family: "FontAwesome";
   font-size: 24px;
-  text-indent: 0; 
   float: left;
+  text-indent: 0; 
+  transition: .5s;
+}
+
+.video:hover::after {
+  border: 3px solid #DF453E;
+  color: #DF453E;
 }
 
 .join-programme-content {
@@ -552,29 +575,72 @@ header.active .list a:hover,
 
 footer {
   background-color: #161616;
-  padding: 100px 0 0; 
   color: #fff;
 }
 
 .footer-container {
+  padding: 130px 0 65px;
   display: flex;
-  justify-content: space-between;
 }
 
-.footer-container li {
-  flex-basis: 25%;
+.footer-head { 
+  font-size: 22px; 
+  word-spacing: -5px;
+}
+
+.foot-logo,
+.accounts,
+.footer-collection,
+.footer-links {
+  flex-basis: 26%;
+}
+
+.footer-logo {
+  width: 128px;
+  height: 78px;
+  display: inline-block;
+}
+
+.footer-logo a,
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+
+.our-collections,
+.accounts,
+.usefull-links {
+  margin: 38px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.collection,
+.account,
+.link {
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: .5s;
+}
+
+.collection:hover,
+.account:hover,
+.link:hover {
+  color: #DF453E;
 }
 
 .bottom-footer {
   width: 100%;
-  padding: 30px 0;
+  padding: 28px 0;
   border-top: 1px solid #2D2D2D;
 }
 
 .bottom-footer .wrapper{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .copyright {
