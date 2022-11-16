@@ -209,7 +209,8 @@ header.active .list a:hover,
 .details-heading,
 .detail-heading,
 .filter-heading,
-.category-heading { 
+.category-heading,
+.categories-heading { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -752,7 +753,7 @@ iframe { width: 100%; }
 /* Product Page CSS Start */
 
 .product-page { background-color: #F5F5F5;}
-.main-section { padding: 142px 0 50px;}
+.main-section { padding: 142px 0 60px;}
 
 .main-section > .wrapper {
   width: 100%;
@@ -895,8 +896,75 @@ iframe { width: 100%; }
 .category span { color: #2D2D2D;}
 /* Sidebar Css End */
 
+/* Product Section Start */
+.product-section { padding: 88px 0 120px; }
 
+.product-section .wrapper {
+  width: 100%;
+  padding: 0 105px;
+}
 
+.breadcrumb { display: flex; }
+
+.breadcrumb-list { 
+  color: #8a8788;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bread-home::after {
+  content: "/";
+  padding: 5px;
+}
+
+.all-cat,
+.bicycle-cat-head,
+.accessories-cat-head,
+.all-pro-breadcrumb,
+.accessories-breadcrumb,
+.bicycles-breadcrumb {
+  display: none;
+}
+
+.all-cat.active,
+.bicycle-cat-head.active,
+.accessories-cat-head.active,
+.all-pro-breadcrumb.active,
+.accessories-breadcrumb.active,
+.bicycles-breadcrumb.active {
+  display: block;
+}
+
+.categories-heading {
+  padding: 18px 0;
+  color: #DF453E;
+  font-size: 26px;
+}
+
+.result-sort-container {
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #6e686a;
+  font-weight: 600;
+}
+
+.sorting span::after {
+  content: "\f078";
+  margin-left: 88px;
+  font-family: "FontAwesome";
+  font-size: 14px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product { flex-basis: 31%; }
+
+/* Product Section End */
 /* Product Page CSS End */
 
 
@@ -951,6 +1019,12 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.product-page-footer .our-collections,
+.product-page-footer .accounts,
+.product-page-footer .usefull-links {
+  margin: 25px 0 38px;
 }
 
 .collection,
@@ -1011,6 +1085,12 @@ footer {
 }
 
 .contact-footer .footer-container { padding: 102px 0 70px; }
+.product-page-footer .footer-container { padding: 100px 0 70px; }
+
+.product-page-footer .footer-head {
+  color: #4B4F58;
+  font-size: 18px;
+}
  /*=================================
   footer styling ends here
 =================================*/ 
