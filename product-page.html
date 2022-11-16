@@ -6,7 +6,7 @@
   <title>E-Commerce Website | Contact us </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" media="screen" href="./assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
               <form action="#FIXME" method="post" class="search-form">
                 <div class="input-group">
                   <span class="search-head">Search</span>
-                  <input type="text" class="search" placeholder="Search Product">
+                  <input type="text" class="search" placeholder="Search products...">
                 </div>
                 <div class="input-control">
                   <button type="submit" class="btn search-submit">submit</button>
@@ -67,15 +67,15 @@
           
             <!-- Filter by Price Section Start -->
             <div class="filter-container">
-              <h3 class="filter-heading">Filter By Price</h3>
+              <h3 class="filter-heading">Filter by price</h3>
               <form action="#FIXME" method="post" class="filter-form">
                 <div class="input-group">
                   <input type="range" class="min" name="range-min" min="20" max="350">
                   <input type="range" class="max" name="range-max" min="20" max="350">
                 </div>
                 <div class="price-range">
-                  <span class="min-price">$20</span> 
-                  <span class="max-price">$350</span> 
+                  <span class="min-price">20.00</span> 
+                  <span class="max-price">350.00</span> 
                 </div>
                 <div class="input-control">
                   <input type="submit" class="btn filter-submit" value="APPLY">
@@ -88,8 +88,8 @@
             <div class="category-container">
               <h3 class="category-heading">Filter By Categories</h3>
               <ul class="categories">
-                <li><a href="#FIXME"  class="category" data-list="accessories" >Accessories (10)</a></li>
-                <li><a href="#FIXME"  class="category" data-list="bicycle" >Bicycle (4)</a></li>
+                <li><a href="#FIXME"  class="category" data-list="accessories" >Accessories <span>(10)</span></a></li>
+                <li><a href="#FIXME"  class="category" data-list="bicycle" >Bicycles <span>(4)</span></a></li>
               </ul>
             </div>
             <!-- Filter by Category Section End -->
@@ -100,18 +100,19 @@
           <section class="product-section">
             <div class="wrapper">
               <ul class="breadcrumb">
-                <li><a href="#FIXME" class="breadcrumb-list"></a>Home</li>
-                <li><a href="#FIXME" class="breadcrumb-list bicycles-breadcrumb"></a>Bicycles</li>
-                <li><a href="#FIXME" class="breadcrumb-list accessories-breadcrumb"></a>Accessories</li>
+                <li><a href="index.html" class="breadcrumb-list bread-home">Home</a></li>
+                <li><a href="index.html" class="breadcrumb-list all-pro-breadcrumb active">All Products</a></li>
+                <li><a href="#FIXME" class="breadcrumb-list bicycles-breadcrumb">Bicycles</a></li>
+                <li><a href="#FIXME" class="breadcrumb-list accessories-breadcrumb">Accessories</a></li>
               </ul>
               <ul class="categories-heading">
-                <li class="all-cat">All Products</li>
+                <li class="all-cat active">All Products</li>
                 <li class="bicycle-cat-head">Bicycles</li>
                 <li class="accessories-cat-head">Accessories</li>
               </ul>
               <div class="result-sort-container">
                 <div class="results">
-                  <span>Showing all 4 results</span>
+                  <span>Showing all <span class="result-number">14</span> results</span>
                 </div>
                 <div class="sorting">
                   <span>Default sorting</span>
@@ -148,7 +149,7 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$350.00</span>
                     </figcaption>
@@ -165,8 +166,8 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$350.00</span>
                     </figcaption>
@@ -225,7 +226,7 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$27.00 - $35.00</span>
                       <ul class="gloves-size">
@@ -247,8 +248,8 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$27.00 - $35.00</span>
                       <ul class="gloves-size">
@@ -293,8 +294,8 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$27.00 - $35.00</span>
                       <ul class="gloves-size">
@@ -317,7 +318,7 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$27.00 - $35.00</span>
                       <ul class="gloves-size">
@@ -376,7 +377,7 @@
                 </li>
                 <li class="product" data-target="accessories">
                   <figure>
-                    <img src="./assets/images/accessories-3-800x800.jpg" alt="Bicycle Gloves Yellow"
+                    <img src="./assets/images/accessories-6-800x800.jpg" alt="Bicycle Gloves Yellow"
                     title="Bicycle Gloves Yellow">
                     <figcaption class="product-content">
                       <span class="product-category">Accessories</span>
@@ -386,7 +387,7 @@
                         <li class="star">star</li>
                         <li class="star">star</li>
                         <li class="star">star</li>
-                        <li class="star">star</li>
+                        <li class="star empty-star">star</li>
                       </ul>
                       <span class="product-price">$27.00 - $35.00</span>
                       <ul class="gloves-size">
@@ -432,11 +433,11 @@
     <!--main section end-->
 
     <!--footer section start-->
-    <footer>
+    <footer class="product-page-footer">
       <div class="wrapper">
         <ul class="footer-container">
-          <li class="footer-logo">
-            <span class="fooetr-logo">
+          <li class="foot-logo">
+            <span class="footer-logo">
               <a href="index.html" title="E-commerce Website">
                 <img src="./assets/images/logo-1-80x48.png" alt="E-Commerce Logo">
               </a>
@@ -452,7 +453,7 @@
             </ul>
           </li>
           <li class="footer-collection">
-            <h4 class="footer-head">Our Collections</h4>
+            <h4 class="footer-head">Our Collection</h4>
             <ul class="our-collections">
               <li><a href="#FIXME" class="collection" title="Mountain Bikes">Mountain Bikes</a></li>
               <li><a href="#FIXME" class="collection" title="City Bikes">City Bikes</a></li>
@@ -470,7 +471,9 @@
             </ul>
           </li>
         </ul>
-        <div class="bottom-footer">
+      </div>
+      <div class="bottom-footer">
+        <div class="wrapper"> 
           <p class="copyright">
             Copyright &copy; 2022 Cycle Shop
           </p>
@@ -481,7 +484,7 @@
             <li><a href="#FIXME" class="icon youtube" title="Subscribe us on Youtube">Youtube</a></li>
           </ul>
         </div>
-      </div>
+        </div>
     </footer>
     <!--footer section end-->
   </div>
