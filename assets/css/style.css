@@ -199,7 +199,8 @@ header.active .list a:hover,
 .content-head,
 .kryo-top-head,
 .kryo-heading,
-.footer-head { 
+.footer-head,
+.contact-us-heading { 
   font-family: "boldoy"; 
   font-style: italic;
   text-transform: uppercase;
@@ -214,6 +215,8 @@ header.active .list a:hover,
   text-transform: uppercase;
   transition: .5s;
 }
+
+.d-none { display: none; }
 /* Common Style End */
 
 /* Banner Section CSS Start */
@@ -564,6 +567,30 @@ header.active .list a:hover,
 
 .shop-now { margin: 40px; }
 /* KRYO X26 MTB Section CSS End */
+
+
+/* CONTACT PAGE START */
+/* Banner Section Start */
+.contact-banner-section {
+  padding: 190px 0 116px  ;
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%),
+              url("../../assets/images/join-programme.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.contact-us-heading {
+  font-size: 78px;
+  text-align: center;
+  word-spacing: -20px;
+}
+
+.map-section .wrapper { width: 100%; }
+iframe { width: 100%; }
+
+/* Banner Section End */
+/* CONTACT PAGE END */
+
 
 /*=================================
   main styling ends here
