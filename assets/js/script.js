@@ -27,3 +27,32 @@ hamBurger.addEventListener('click', function () {
   navbar.classList.toggle('active')
 })
 // Mobile Navbar Function End 
+
+// Slider Function Start
+function sliderFunction() {
+  var slider = document.querySelector('.sliders');
+  var slideNextBtn = document.querySelector('.slide-next')
+  var slidePrevBtn = document.querySelector('.slide-prev')
+  var containerDimension = slider.getBoundingClientRect();
+  var containerWidth = containerDimension.width;
+
+  slideNextBtn.addEventListener('click', function () {
+    slider.scrollLeft += containerWidth;
+  })
+
+  slidePrevBtn.addEventListener('click', function () {
+    slider.scrollLeft -= containerWidth;
+  })
+ 
+}
+// Slider Function End
+
+
+if(document.body.classList.contains("home-page")){
+  sliderFunction();
+
+} else if (document.body.classList.contains("contact-page")) {
+
+} else if (document.body.classList.contains("product-page")) {
+
+}
