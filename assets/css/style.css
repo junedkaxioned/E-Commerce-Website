@@ -159,12 +159,6 @@ header .wrapper {
 }
 
 .hamburger { display: none; }
-.list a:hover { color: #DF453E; }
-
-header.active .list a:hover,
-.product-page .list a:hover { 
-  color: #FFCCCC;
-}
 
 .cart-money {
   color: #fff;
@@ -274,10 +268,6 @@ header.active .list a:hover,
   font-size: 18px;
 }
 
-.btn:hover {
-  background-color: transparent;
-  color: #DF453E;
-}
 /* Banner Section CSS End */
 
 /* New Arrival Css Start */
@@ -320,11 +310,6 @@ header.active .list a:hover,
 
 .arrivales img { 
   cursor: pointer; 
-  transition: .5s;
-}
-
-.arrivales img:hover {
-  opacity: .7;
   transition: .5s;
 }
 
@@ -491,11 +476,6 @@ header.active .list a:hover,
   font-weight: 600;
 }
 
-.size:hover {
-  border: 1px solid #DF453E;
-  color: #DF453E;
-}
-
 .view-more-btn {
   margin-top: 30px;
   text-align: center;
@@ -542,11 +522,6 @@ header.active .list a:hover,
   float: left;
   text-indent: 0; 
   transition: .5s;
-}
-
-.video:hover::after {
-  border: 3px solid #DF453E;
-  color: #DF453E;
 }
 
 .join-programme-content {
@@ -873,8 +848,6 @@ iframe { width: 100%; }
   border-color: #32373C;
 }
 
-.filter-submit:hover { color: #32373C; }
-
 .min-price::before,
 .max-price::before {
   content: "$";
@@ -1049,12 +1022,6 @@ footer {
   transition: .5s;
 }
 
-.collection:hover,
-.account:hover,
-.link:hover {
-  color: #DF453E;
-}
-
 .bottom-footer {
   width: 100%;
   padding: 28px 0;
@@ -1109,5 +1076,43 @@ footer {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}  
+
+/*media query for Hover till 1024px starts */
+@media only screen and (max-width: 1024px) { 
+
+  .list a:hover { color: #DF453E; }
+
+  header.active .list a:hover,
+  .product-page .list a:hover { 
+    color: #FFCCCC;
+  }
+
+  .collection:hover,
+  .account:hover,
+  .link:hover {
+    color: #DF453E;
+  } 
+
+  .btn:hover {
+    background-color: transparent;
+    color: #DF453E;
+  }
+
+  .arrivales img:hover {
+    opacity: .7;
+    transition: .5s;
+  }
+
+  .size:hover {
+    border: 1px solid #DF453E;
+    color: #DF453E;
+  }
+
+  .video:hover::after {
+    border: 3px solid #DF453E;
+    color: #DF453E;
+  }
+
+  .filter-submit:hover { color: #32373C; }
+}  
+/*media query for Hover till 1024px ends */
