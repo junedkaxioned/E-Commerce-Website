@@ -1142,6 +1142,7 @@ footer {
 
   .banner-content { padding-right: 20%;}
   .discover-content { padding-right: 50%;}
+  .kryo-spec figcaption { padding: 30px; }
   .kryo-spec figcaption h3 { font-size: 24px; }
    
   .kryo-spec figcaption p { 
@@ -1149,9 +1150,42 @@ footer {
     line-height: 1.6; 
   }
 
-  .kryo-spec figcaption { padding: 30px; }
   .kryo-spec figcaption h4 { font-size: 14px; }
   .goecobiking-section .wrapper { padding: 0 4.5%; }
 }
 /* media query for 995px to 1023px End  */
+
+/* media query for 768px to 994px Start  */
+@media only screen and (min-width: 768px) and (max-width: 994px) { 
+
+  .list a { padding: 12px; }
+  .banner-content { padding-right: 10%;}
+  .banner-top-heading { font-size: 24px; }
+  .banner-heading { font-size: 60px; }
+  .star::after { font-size: 12px; }
+  .discover-content { padding-right: 35%;}
+  .kryo-spec figcaption { padding: 25px; }
+  .kryo-spec figcaption h3 { font-size: 20px; }
+   
+  .kryo-spec figcaption p { 
+    font-size: 12px;
+    line-height: 1.5; 
+  }
+
+  .kryo-spec figcaption h4 { font-size: 14px; }
+  .goecobiking-section .wrapper { padding: 0; }
+  .join-left { flex-basis: 55%; }
+  .kryo-heading { font-size: 40px; }
+
+  .footer-container { 
+    padding-top: 85px; 
+    justify-content: space-between;
+  }
+
+  .foot-logo { flex-basis: 20%; }
+  .footer-head { font-size: 20px; }
+}
+/* media query for 768px to 994px Start  */
+
+
 
