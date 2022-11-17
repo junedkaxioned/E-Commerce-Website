@@ -1165,6 +1165,9 @@ footer {
 
   .kryo-spec figcaption h4 { font-size: 14px; }
   .goecobiking-section .wrapper { padding: 0 4.5%; }
+  .details-heading { font-size: 30px; }
+  .sidebar { flex-basis: 60%; }
+  .product-section .wrapper { padding: 0 40px; }
 }
 /*media query for 1024px to 1280px Ends */
 
@@ -1183,6 +1186,12 @@ footer {
 
   .kryo-spec figcaption h4 { font-size: 14px; }
   .goecobiking-section .wrapper { padding: 0 4.5%; }
+  .contact-us-heading { font-size: 64px; }
+  .number-list { padding: 0 80px 0 80px; } 
+  .details-heading { font-size: 30px; }
+  .sidebar { flex-basis: 55%; }
+  .product-section .wrapper { padding: 0 40px; }
+
 }
 /* media query for 995px to 1023px End  */
 
@@ -1215,6 +1224,33 @@ footer {
 
   .foot-logo { flex-basis: 20%; }
   .footer-head { font-size: 20px; }
+
+  .contact-us-heading {
+    font-size: 46px;
+    word-spacing: 0;
+  }
+
+  .number-list { padding: 0; }
+
+  .details-heading { 
+    font-size: 26px; 
+    word-spacing: 0;
+  }
+
+  .input-container { flex-direction: column; }
+  .contact-form { padding: 40px 32px;}
+  .main-section > .wrapper {
+    width: 100%;
+    padding: 0 10px;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .product-section { padding: 20px 0 50px; }
+  .product-section .wrapper { padding: 0 20px; }
+  .search-submit { padding: 0; }
+  .footer-head { text-align: center; }
+  .product { flex-basis: 47%; }
 }
 /* media query for 768px to 994px End  */
 
@@ -1317,17 +1353,73 @@ footer {
   }
   
   .social-links { margin-top: 30px; }
+  .contact-banner-section { padding: 165px 0 85px; }
+
+  .contact-us-heading { 
+    font-size: 52px; 
+    word-spacing: 0;
+  }
+
+  .number-list {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sales::before, 
+  .dealership::before, 
+  .service::before {
+    font-size: 20px;
+  }
+  .contact-number-section { padding: 75px 0; }
+  .contact-details-section { padding: 0 0 105px; }
+
+  .contact-details-section .wrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .details-heading { 
+    font-size: 20px; 
+    word-spacing: 0;
+  }
+
+  .contact-form {
+    position: relative;
+    padding: 44px 30px 74px;
+  }
+
+  .contact-right { padding-top: 55px; }
+  .contact-footer .footer-container { padding: 102px 0 30px; }
+  .product-page-footer .footer-container { padding: 50px 0 30px; }
+
+  .main-section > .wrapper {
+    width: 100%;
+    padding: 0 10px;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .product-section { padding: 20px 0 50px; }
+  .product-section .wrapper { padding: 0 20px; }
+  .search-submit { padding: 0; }
+  .footer-head { text-align: center; }
+  .product { flex-basis: 47%; }
 }
 /* media query for max width 767px End  */
 
 
 /* Media query for mobile navgation  start */
-
 @media only screen and (max-width: 768px) { 
 
   .cart { display: none }
   header { padding: 20px 0; }
   .hamburger { display: block; }
+
+  .product-page .hamburger { background-color: transparent; }
+  .product-page .bar{ background: #FFF; }
+
+
 
   .navbar {
     width: 100%;
@@ -1350,7 +1442,6 @@ footer {
     justify-content: center;
   }
 }
-
 /* Media query for mobile navgation  End */
 
 
