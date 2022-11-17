@@ -79,9 +79,17 @@ sub { bottom: -.25em; }
 .cf { *zoom: 1; }
 
 /*for all*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 a { 
@@ -94,10 +102,15 @@ li {
   list-style-type: none;
 }
 
+@font-face {
+  font-family:  "boldoy";
+  src: url(../../assets/font/boldoy.regular.ttf);
+}
+
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 88%; 
   margin: 0 auto;
 }
 
@@ -105,7 +118,93 @@ li {
   Header styling starts here
 =================================*/
 
+header {
+  width: 100%;
+  padding: 16px 0;
+  position: fixed;  
+  z-index: 9999;
+  background-color: transparent;
+}
 
+header.active {
+  background-color: #DF453E;
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.5);
+  transition: .5s;
+}
+
+header.active .list a { color: #fff; }
+
+.product-page header { 
+  padding: 15px 0;
+  background-color: #DF453E; 
+}
+
+header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-lists {
+  display: flex;
+  align-items: center;
+}
+
+.list a {
+  padding: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: .5s;
+}
+
+.hamburger {
+  width: 48px; 
+  height: 48px;
+  background-color: #fff;
+  border-radius: 2px;
+  display: none;
+  position: relative;
+  cursor: pointer
+}
+
+.bar {
+  width: 40%;
+  height: 2px;
+  border-radius: 5px;
+  position: absolute;
+  background: #DF453E;
+  transition: 0.5s;
+  left: 30%;
+}
+
+.bar:nth-child(1) { top: 40%; }
+.bar:nth-child(2) { top: 50% ; }
+.bar:nth-child(3) { top: 60%; }
+
+.hamburger.active .bar:nth-child(1){ transform: translateY(3px) rotate(-45deg); }
+.hamburger.active .bar:nth-child(2){ opacity:0; }
+.hamburger.active .bar:nth-child(3){ transform: translateY(-7px) rotate(45deg); }
+
+.text-indent {
+  text-indent: -9999px;
+}
+
+.cart-money {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.cart-money::after {
+  content: "\f290";
+  margin-left: 4px;
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 32px;
+}
 
 /*=================================
   Header styling ends here
@@ -114,6 +213,779 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+
+/* Common Style start*/
+.banner-top-heading,
+.banner-heading,
+.specification,
+.section-heading,
+.product-name,
+.discover-top-heading,
+.discover-heading,
+.kryo-spec figcaption h3,
+.kryo-spec figcaption h4,
+.watch-video,
+.content-head,
+.kryo-top-head,
+.kryo-heading,
+.footer-head,
+.contact-us-heading,
+.number-text,
+.details-heading,
+.detail-heading,
+.filter-heading,
+.category-heading,
+.categories-heading { 
+  font-family: "boldoy"; 
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 12px 23px;
+  border: 2px solid #DF453E;
+  background-color: #DF453E;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: .5s;
+}
+
+.d-none { display: none; }
+/* Common Style End */
+
+/* Banner Section CSS Start */
+.banner-section {
+  width: 100%;
+  background-color: #FFCCCC;
+  background: linear-gradient(to right, rgba(0,	0,	0, 0.6) 50%, rgba(223,	69,	62, 0.6) 50%), 
+              url("../../assets/images/bike-hero.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.banner-content { padding: 98px 60% 88px 0; }
+.banner-top-heading { font-size: 26px; }
+
+.banner-heading { 
+  padding: 15px 0;
+  font-size: 74px; 
+  line-height: 1.14;
+}
+
+.specification {
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.specs {
+  margin-bottom: 47px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discover-specs-list,
+.specs-list {
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.specs-list::before,
+.discover-specs-list::before {
+  content: "\f192";
+  margin-right: 15px;
+  font-family: "FontAwesome";
+  font-size: 18px;
+}
+
+/* Banner Section CSS End */
+
+/* New Arrival Css Start */
+.new-arrivales-section { padding: 100px 0 116px; }
+
+.section-heading { 
+  padding: 34px 0;  
+  color: #161616;
+  font-size: 50px; 
+  text-align: center;
+}
+
+.sliders {
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  min-width: 100%;
+}
+
+.arrivales-container {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.arrivales { 
+  flex: 2;
+  flex-basis: 22%; 
+}
+
+.product-content { padding: 12px 0; }
+
+.arrivales img { 
+  cursor: pointer; 
+  transition: .5s;
+}
+
+.product-category {
+  color: #A5A7AB;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.product-name {
+  padding: 8px 0;
+  color: #2C2526;
+  font-size: 14px;
+}
+
+.star { text-indent: -99999px; }
+
+.stars { 
+  padding-bottom: 5px;
+  display: flex; 
+}
+
+.star::after {
+  content: "\f005";
+  color: #4B4F58;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+
+.empty-star::after { content: "\f006"; }
+
+.product-price {
+  color: #5A5558;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* New Arrival Css End */
+
+/* Discover Section Css Start */
+.discover-section {
+  padding: 100px 0 96px;
+  color: #fff;
+}
+
+.mountain-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(22,22,22,.9) 60%), 
+              url("../../assets/images/moutain-bike.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.city-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(22,22,22,.9) 60%), 
+              url("../../assets/images/city-bike.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.speciality-bikes {
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%), 
+              url("../../assets/images/speciality-bike.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.discover-content { padding: 35px 62% 35px 0; }
+.discover-top-heading { font-size: 19px; }
+
+.discover-heading {
+  padding: 32px 0;
+  font-size: 36px;
+}
+
+.kryo-para,
+.kryo-spec figcaption p,
+.discover-para {
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.discover-specs {
+  width: 100%;
+  padding: 44px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+} 
+
+.discover-specs-list {  flex-basis: 47%; }
+.discover-specs-list::before { color: #DF453E; }
+.discover-content .btn { margin-top: 10px;} 
+/* Discover Section Css End */
+
+/* Why Choose Us Section Start */
+.why-choose-section { 
+  padding: 90px 0 45px;
+  background: linear-gradient(to bottom, #F5F5F5 82%, #fff 18% );
+}
+
+.kryo-specification {
+  margin: 30px 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+  color: #fff;
+}
+
+.light-weight,
+.lifetime-warrenty {
+  flex-basis: 49%;
+}
+
+.service-network, 
+.assembled-delivery, 
+.free-first {
+  flex-basis: 32.1%;
+}  
+
+.kryo-spec figure { position: relative; }
+
+.kryo-spec figcaption {
+  padding: 35px;
+  position: absolute;
+  bottom: 0%; 
+  left: 0%;
+} 
+
+.kryo-spec figcaption h3 {
+  font-size: 28px;
+  padding: 10px 0;
+}
+
+.kryo-spec figcaption h4 { font-size: 18px;}
+/* Why Choose Us Section End */
+
+/* Explore Accessories Section Css Start */
+.explore-section { padding: 35px 0 98px; }
+
+.explore-container {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.explore {
+  flex: 1;
+  flex-basis: 22%;
+}
+
+.gloves-size {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.size {
+  padding: 5px 10px;
+  border: 1px solid #EBEBEB;
+  color: #80839B;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.view-more-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+/* Explore Accessories Section Css End */
+
+/* Join Programme Section Start */
+.goecobiking-section {
+  padding: 70px 0 58px;
+  background-color: #F5F5F5;
+}
+
+.goecobiking-section .wrapper { padding: 0 7.5%; }
+
+.join-programme {  
+  padding: 412px 50px 58px;
+  margin: 22px 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%),
+              url("../../assets/images/join-programme.jpg") no-repeat center;
+  background-size: cover; 
+  color: #fff;           
+}
+
+.watch-video { font-size: 26px; }
+
+.video { 
+  display: inline-block;
+  text-indent: -99999px; 
+  cursor: pointer;
+}
+
+.video::after {
+  content: "\f04b";
+  width: 56px;
+  height: 56px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "FontAwesome";
+  font-size: 24px;
+  float: left;
+  text-indent: 0; 
+  transition: .5s;
+}
+
+.join-programme-content {
+  padding: 38px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.join-left { flex-basis: 46%; }
+
+.join-left p {
+  padding: 15px 0;
+  color: #6e686a;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.content-head {
+  font-size: 26px;
+  color: #161616;
+}
+/* Join Programme Section End */
+
+/* KRYO X26 MTB Section CSS Start */
+.kryo-x26 {
+  background: linear-gradient(to bottom, rgba(22,22,22,.5) 30%, rgba(22,22,22) 100%),
+              url("../../assets/images/bike-hero.jpg") no-repeat center;
+  background-size: cover; 
+  color: #fff;  
+  text-align: center;
+}
+
+.kryo-x26 .wrapper { padding: 175px 11% 130px; }
+.kryo-top-head { font-size: 26px; } 
+
+.kryo-heading { 
+  padding: 36px 0 30px;
+  font-size: 50px;
+}
+
+.shop-now { margin: 40px; }
+/* KRYO X26 MTB Section CSS End */
+
+
+/* CONTACT PAGE START */
+/* Banner Section Start */
+.contact-banner-section {
+  padding: 190px 0 116px  ;
+  background: linear-gradient(to bottom, rgba(0,0,0,.4) , rgba(22,22,22,.9) 60%),
+              url("../../assets/images/join-programme.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.contact-us-heading {
+  font-size: 78px;
+  text-align: center;
+  word-spacing: -20px;
+}
+/* Banner Section End */
+
+/* Map Section Start */
+.map-section .wrapper { width: 100%; }
+iframe { width: 100%; }
+/* Map Section End */
+
+/* Contact Number Section Start */
+.contact-number-section { padding: 75px 0 204px; }
+
+.number-list {
+  padding: 0 88px 0 108px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number-text { font-size: 18px; }
+
+.number-name {
+  padding: 10px;
+  color: #6e686a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sales::before,
+.dealership::before,
+.service::before {
+  padding: 28px 0 30px;
+  display: block;
+  color: #DF453E;
+  font-family: "FontAwesome";
+  font-size: 30px;
+  font-style: normal;
+  text-align: center;
+}
+
+.sales::before { content: "\f0d1"; }
+.service::before { content: "\f0b1"; }
+.dealership::before { content: "\f54e"; }
+/* Contact Number Section Start */
+
+/* Contact Detail and Form Section Start */
+.contact-details-section {
+  padding: 84px 0 105px;
+  background-color: #F5F5F5;
+}
+
+.contact-details-section .wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.contact-left,
+.contact-right {
+  flex-basis: 50%;
+}
+
+.contact-left { position: relative; }
+
+.contact-form {
+  width: 100%;
+  height: 140%;
+  padding: 64px 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.form-contact {
+  padding-top: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  width: 100%;
+  position: relative;
+}
+  
+.input {
+  width: 100%;
+  padding: 12px 12px;
+  outline: none;
+  background-color: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  font-size: 16px;
+}
+
+.textarea { padding: 14px 14px 12px; }
+.form-control .submit { font-size: 16px; }
+
+.input::placeholder {
+  color: #8D8F8E;
+  font-weight: 600;
+}
+
+.error {
+  display: block;
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  color: #DF453E;
+  font-size: 13px;
+  visibility: hidden;
+}
+
+.error.show { visibility: visible; }
+.contact-right { padding: 0 6.5%; }
+
+.details-heading {
+  color: #161616;
+  font-size: 38px;
+  word-spacing: -10px;
+}
+
+.details-container {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+}
+
+.detail-heading {
+  padding: 0 0 21px;
+  color: #161616;
+  font-size: 20px;
+  word-spacing: -5px;
+}
+
+.detail span { 
+  display: block;
+  color: #6e686a;
+  font-weight: 600;
+}
+
+.detail span:last-of-type{ padding: 11px 0 0; }
+.detail:nth-child(2) span:last-of-type { padding: 0; }
+/* Contact Detail and Form Section End */
+/* CONTACT PAGE END */
+
+/* Product Page CSS Start */
+
+.product-page { background-color: #F5F5F5;}
+.main-section { padding: 142px 0 60px;}
+
+.main-section > .wrapper {
+  width: 100%;
+  padding: 0 32px;
+  display: flex;
+  gap: 30px;
+}
+
+/* Sidebar Css Start */
+.search-container,
+.filter-container,
+.category-container,
+.product-section {
+  background-color: #fff;
+}
+
+.search-container {  padding: 32px 32px 30px; }
+
+.search-form {
+  display: flex;
+  align-items: end;
+  gap: 6px;
+}
+
+.search-head {
+  padding: 6px 0 ;
+  display: block;
+  color: #2D2D2D;
+  font-size: 16px;
+}
+
+.search {
+  width: 100%;
+  padding: 12px 7px;
+  border: 1px solid #E0E0E0;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+}
+
+.search-submit { 
+  padding: 0;
+  text-indent: -99999px; 
+}
+
+.search-submit::after {
+  content: "\f054";
+  width: 32px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "FontAwesome";
+  font-size: 16px;
+  text-indent: 0;
+  float: left ;
+}
+
+.filter-form ,.input-group { position: relative; }
+
+.min, .max {
+  width: 100%;
+  position: absolute;
+  accent-color: #DF453E;
+  background: transparent;
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, #DF453E 30%, #DF453E 60%, transparent 60%, transparent 100%);
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+} 
+
+.filter-container { padding: 45px 30px 58px; }
+
+.filter-heading { 
+  color: #4C4F58; 
+  text-transform: none;
+  word-spacing: -3px;
+}
+
+.filter-form .input-group { padding: 30px 0 44px; }
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.min-price,
+.max-price {
+  color: #4C4F58;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-control {
+  padding: 32px 0 0;
+  text-align: right;
+}
+
+.filter-submit {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #32373C;
+  border-color: #32373C;
+}
+
+.min-price::before,
+.max-price::before {
+  content: "$";
+}
+
+.category-container { padding: 32px 32px 28px; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 41.9%;
+  gap: 32px;
+}
+
+.category-heading {
+  font-size: 18px;
+  color: #4C4F58;
+  word-spacing: -5px;
+}
+
+.categories {
+  padding: 18px 0; 
+  display: flex;
+  flex-direction: column;
+}
+
+.category { 
+  padding: 8px 0;
+  color: #DF453E;
+}
+
+.category span { color: #2D2D2D;}
+/* Sidebar Css End */
+
+/* Product Section Start */
+.product-section { padding: 88px 0 120px; }
+
+.product-section .wrapper {
+  width: 100%;
+  padding: 0 105px;
+}
+
+.breadcrumb { display: flex; }
+
+.breadcrumb-list { 
+  color: #8a8788;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bread-home::after {
+  content: "/";
+  padding: 5px;
+}
+
+.all-cat,
+.bicycle-cat-head,
+.accessories-cat-head,
+.all-pro-breadcrumb,
+.accessories-breadcrumb,
+.bicycles-breadcrumb {
+  display: none;
+}
+
+.all-cat.active,
+.bicycle-cat-head.active,
+.accessories-cat-head.active,
+.all-pro-breadcrumb.active,
+.accessories-breadcrumb.active,
+.bicycles-breadcrumb.active {
+  display: block;
+}
+
+.categories-heading {
+  padding: 18px 0;
+  color: #DF453E;
+  font-size: 26px;
+}
+
+.result-sort-container {
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #6e686a;
+  font-weight: 600;
+}
+
+.sorting span::after {
+  content: "\f078";
+  margin-left: 88px;
+  font-family: "FontAwesome";
+  font-size: 14px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product { flex-basis: 31%; }
+
+/* Product Section End */
+/* Product Page CSS End */
 
 
 
@@ -125,12 +997,453 @@ li {
   footer styling starts here
 =================================*/ 
 
+footer {
+  background-color: #161616;
+  color: #fff;
+}
+
+.footer-container {
+  padding: 130px 0 65px;
+  display: flex;
+}
+
+.footer-head { 
+  font-size: 22px; 
+  word-spacing: -5px;
+}
+
+.foot-logo,
+.accounts,
+.footer-collection,
+.footer-links {
+  flex-basis: 26%;
+}
+
+.footer-logo {
+  width: 128px;
+  height: 78px;
+  display: inline-block;
+}
+
+.footer-logo a,
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+}
 
 
+.our-collections,
+.accounts,
+.usefull-links {
+  margin: 38px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-page-footer .our-collections,
+.product-page-footer .accounts,
+.product-page-footer .usefull-links {
+  margin: 25px 0 38px;
+}
+
+.collection,
+.account,
+.link {
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: .5s;
+}
+
+.bottom-footer {
+  width: 100%;
+  padding: 28px 0;
+  border-top: 1px solid #2D2D2D;
+}
+
+.bottom-footer .wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.icon {
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  text-indent: -9999px;
+}
+
+.facebook::after { content: "\f082"; }
+.instagram::after { content: "\f16d"; }
+.twitter::after { content: "\f099"; }
+.youtube::after { content: "\f16a"; }
+
+.youtube::after,
+.twitter::after, 
+.instagram::after,
+.facebook::after { 
+  float: left;
+  text-indent: 0;
+}
+
+.contact-footer .footer-container { padding: 102px 0 70px; }
+.product-page-footer .footer-container { padding: 100px 0 70px; }
+
+.product-page-footer .footer-head {
+  color: #4B4F58;
+  font-size: 18px;
+}
  /*=================================
   footer styling ends here
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}  
+
+/*media query for Hover till 1024px starts */
+@media only screen and (min-width: 1024px) { 
+
+  .list a:hover { color: #DF453E; }
+
+  header.active .list a:hover,
+  .product-page .list a:hover { 
+    color: #FFCCCC;
+  }
+
+  .collection:hover,
+  .account:hover,
+  .link:hover {
+    color: #DF453E;
+  } 
+
+  .btn:hover {
+    background-color: transparent;
+    color: #DF453E;
+  }
+
+  .arrivales img:hover {
+    opacity: .7;
+    transition: .5s;
+  }
+
+  .size:hover {
+    border: 1px solid #DF453E;
+    color: #DF453E;
+  }
+
+  .video:hover::after {
+    border: 3px solid #DF453E;
+    color: #DF453E;
+  }
+
+  .filter-submit:hover { color: #32373C; }
+}  
+/*media query for Hover till 1024px ends */
+
+/*media query for 1024px to 1280px Starts */
+@media only screen and (min-width: 1024px) and (max-width: 1280px) { 
+
+  .banner-content { padding-right: 50%;}
+  .discover-content { padding-right: 50%;}
+  .kryo-spec figcaption h3 { font-size: 24px; }
+   
+  .kryo-spec figcaption p { 
+    font-size: 14px;
+    line-height: 1.6; 
+  }
+
+  .kryo-spec figcaption h4 { font-size: 14px; }
+  .goecobiking-section .wrapper { padding: 0 4.5%; }
+  .details-heading { font-size: 30px; }
+  .sidebar { flex-basis: 60%; }
+  .product-section .wrapper { padding: 0 40px; }
+}
+/*media query for 1024px to 1280px Ends */
+
+/* media query for 995px to 1023px Starts  */
+@media only screen and (min-width: 995px) and (max-width: 1023px) { 
+
+  .banner-content { padding-right: 20%;}
+  .discover-content { padding-right: 50%;}
+  .kryo-spec figcaption { padding: 30px; }
+  .kryo-spec figcaption h3 { font-size: 24px; }
+   
+  .kryo-spec figcaption p { 
+    font-size: 14px;
+    line-height: 1.6; 
+  }
+
+  .kryo-spec figcaption h4 { font-size: 14px; }
+  .goecobiking-section .wrapper { padding: 0 4.5%; }
+  .contact-us-heading { font-size: 64px; }
+  .number-list { padding: 0 80px 0 80px; } 
+  .details-heading { font-size: 30px; }
+  .sidebar { flex-basis: 55%; }
+  .product-section .wrapper { padding: 0 40px; }
+
+}
+/* media query for 995px to 1023px End  */
+
+/* media query for 768px to 994px Start  */
+@media only screen and (min-width: 768px) and (max-width: 994px) { 
+
+  .list a { padding: 12px; }
+  .banner-content { padding-right: 10%;}
+  .banner-top-heading { font-size: 24px; }
+  .banner-heading { font-size: 60px; }
+  .star::after { font-size: 12px; }
+  .discover-content { padding-right: 35%;}
+  .kryo-spec figcaption { padding: 25px; }
+  .kryo-spec figcaption h3 { font-size: 20px; }
+   
+  .kryo-spec figcaption p { 
+    font-size: 12px;
+    line-height: 1.5; 
+  }
+
+  .kryo-spec figcaption h4 { font-size: 14px; }
+  .goecobiking-section .wrapper { padding: 0; }
+  .join-left { flex-basis: 55%; }
+  .kryo-heading { font-size: 40px; }
+
+  .footer-container { 
+    padding-top: 85px; 
+    justify-content: space-between;
+  }
+
+  .foot-logo { flex-basis: 20%; }
+  .footer-head { font-size: 20px; }
+
+  .contact-us-heading {
+    font-size: 46px;
+    word-spacing: 0;
+  }
+
+  .number-list { padding: 0; }
+
+  .details-heading { 
+    font-size: 26px; 
+    word-spacing: 0;
+  }
+
+  .input-container { flex-direction: column; }
+  .contact-form { padding: 40px 32px;}
+  .main-section > .wrapper {
+    width: 100%;
+    padding: 0 10px;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .product-section { padding: 20px 0 50px; }
+  .product-section .wrapper { padding: 0 20px; }
+  .search-submit { padding: 0; }
+  .footer-head { text-align: center; }
+  .product { flex-basis: 47%; }
+}
+/* media query for 768px to 994px End  */
+
+
+/* media query for max width 767px Start  */
+@media only screen and (max-width: 767px) { 
+
+  .banner-content { padding: 163px 0 79px ;}
+  .banner-top-heading { font-size: 18px; }
+
+  .banner-heading { 
+    padding: 14px 0;
+    font-size: 54px;
+    word-spacing: -8px; 
+  }
+
+  .specification { padding: 26px 0 24px;}
+
+  .specs {
+    margin-bottom: 52px;
+    gap: 12px;
+  } 
+
+  .btn { padding: 13px 27px; }
+  .new-arrivales-section { padding: 48px 0 74px; }
+
+  .section-heading {
+    font-size: 30px;
+    word-spacing: -5px;
+  }
+
+  .arrivales-container {
+    margin: 10px 5px;
+    row-gap: 38px;
+  }
+
+  .sliders { padding: 18px 0; }
+  .arrivales { flex-basis: 46%; }
+  .star::after { font-size: 14px; }
+  .discover-section { padding: 68px 0 22px; }
+  .discover-content { padding: 35px 3% 35px 2.5%;}
+  
+  .discover-specs {
+    flex-direction: column;
+    padding: 30px 0 54px;
+    gap: 22px;
+  }
+
+  .discover-specs li:nth-child(2) { order: 4 }
+  .discover-specs li:nth-child(4) { order: 5; }
+  .discover-specs li:nth-child(6) { order: 6; }
+  .discover-heading { font-size: 22px; }
+  .speciality-bikes { padding-top: 28px; }
+  .why-choose-section { padding:  46px 0 14px; }
+
+  .kryo-specification { 
+    margin: 40px 5px 0; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .kryo-spec figcaption h3 { font-size: 20px; }
+  .explore-section { padding: 22px 0 94px; }
+  .explore-container { padding: 30px 0;}
+  .explore { flex-basis: 47%; }
+  .goecobiking-section { padding: 50px 0;}
+  .goecobiking-section .wrapper { padding: 1%; }
+  .join-left { flex-basis: 55%; }
+  .kryo-heading { font-size: 40px; }
+  .join-programme { margin: 30px 0;}
+
+  .join-programme-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-head { font-size: 18px; }
+  .kryo-x26 .wrapper { padding: 100px 1%; }
+  .kryo-top-head { font-size: 20px; }
+  .kryo-heading { font-size: 30px; }
+
+  .footer-container { 
+    padding-top: 50px; 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot-logo { margin-bottom: 30px; }
+
+  .our-collections, 
+  .accounts, 
+  .usefull-links {
+    align-items: center;
+  }
+
+  .bottom-footer .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-links { margin-top: 30px; }
+  .contact-banner-section { padding: 165px 0 85px; }
+
+  .contact-us-heading { 
+    font-size: 52px; 
+    word-spacing: 0;
+  }
+
+  .number-list {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .sales::before, 
+  .dealership::before, 
+  .service::before {
+    font-size: 20px;
+  }
+  .contact-number-section { padding: 75px 0; }
+  .contact-details-section { padding: 0 0 105px; }
+
+  .contact-details-section .wrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .details-heading { 
+    font-size: 20px; 
+    word-spacing: 0;
+  }
+
+  .contact-form {
+    position: relative;
+    padding: 44px 30px 74px;
+  }
+
+  .contact-right { padding-top: 55px; }
+  .contact-footer .footer-container { padding: 102px 0 30px; }
+  .product-page-footer .footer-container { padding: 50px 0 30px; }
+
+  .main-section > .wrapper {
+    width: 100%;
+    padding: 0 10px;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .product-section { padding: 20px 0 50px; }
+  .product-section .wrapper { padding: 0 20px; }
+  .search-submit { padding: 0; }
+  .footer-head { text-align: center; }
+  .product { flex-basis: 47%; }
+}
+/* media query for max width 767px End  */
+
+
+/* Media query for mobile navgation  start */
+@media only screen and (max-width: 768px) { 
+
+  .cart { display: none }
+  header { padding: 20px 0; }
+  .hamburger { display: block; }
+
+  .product-page .hamburger { background-color: transparent; }
+  .product-page .bar{ background: #FFF; }
+
+
+
+  .navbar {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #DF453E;
+    color: #fff;
+    transition: .5s;
+    transform: translateX(100%)
+  }
+
+  .navbar.active { transform: translateX(0%);}
+
+  .nav-lists {
+    height: 80%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+/* Media query for mobile navgation  End */
+
+
+
+
