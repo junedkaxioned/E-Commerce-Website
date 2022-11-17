@@ -89,6 +89,7 @@ sub { bottom: -.25em; }
 body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 a { 
@@ -1185,7 +1186,112 @@ footer {
   .foot-logo { flex-basis: 20%; }
   .footer-head { font-size: 20px; }
 }
-/* media query for 768px to 994px Start  */
+/* media query for 768px to 994px End  */
+
+
+/* media query for max width 767px Start  */
+@media only screen and (max-width: 767px) { 
+
+  .banner-content { padding: 163px 0 79px ;}
+  .banner-top-heading { font-size: 18px; }
+
+  .banner-heading { 
+    padding: 14px 0;
+    font-size: 54px;
+    word-spacing: -8px; 
+  }
+
+  .specification { padding: 26px 0 24px;}
+
+  .specs {
+    margin-bottom: 52px;
+    gap: 12px;
+  } 
+
+  .btn { padding: 13px 27px; }
+  .new-arrivales-section { padding: 48px 0 74px; }
+
+  .section-heading {
+    font-size: 30px;
+    word-spacing: -5px;
+  }
+
+  .arrivales-container {
+    margin: 10px 5px;
+    row-gap: 38px;
+  }
+
+  .sliders { padding: 18px 0; }
+  .arrivales { flex-basis: 46%; }
+  .star::after { font-size: 14px; }
+  .discover-section { padding: 68px 0 22px; }
+  .discover-content { padding: 35px 3% 35px 2.5%;}
+  
+  .discover-specs {
+    flex-direction: column;
+    padding: 30px 0 54px;
+    gap: 22px;
+  }
+
+  .discover-specs li:nth-child(2) { order: 4 }
+  .discover-specs li:nth-child(4) { order: 5; }
+  .discover-specs li:nth-child(6) { order: 6; }
+  .discover-heading { font-size: 22px; }
+  .speciality-bikes { padding-top: 28px; }
+  .why-choose-section { padding:  46px 0 14px; }
+
+  .kryo-specification { 
+    margin: 40px 5px 0; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .kryo-spec figcaption h3 { font-size: 20px; }
+  .explore-section { padding: 22px 0 94px; }
+  .explore-container { padding: 30px 0;}
+  .explore { flex-basis: 47%; }
+  .goecobiking-section { padding: 50px 0;}
+  .goecobiking-section .wrapper { padding: 1%; }
+  .join-left { flex-basis: 55%; }
+  .kryo-heading { font-size: 40px; }
+  .join-programme { margin: 30px 0;}
+
+  .join-programme-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-head { font-size: 18px; }
+  .kryo-x26 .wrapper { padding: 100px 1%; }
+  .kryo-top-head { font-size: 20px; }
+  .kryo-heading { font-size: 30px; }
+
+  .footer-container { 
+    padding-top: 50px; 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot-logo { margin-bottom: 30px; }
+
+  .our-collections, 
+  .accounts, 
+  .usefull-links {
+    align-items: center;
+  }
+
+  .bottom-footer .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-links { margin-top: 30px; }
+}
+/* media query for max width 767px End  */
+
+
+
 
 
 
