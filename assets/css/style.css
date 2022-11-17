@@ -299,16 +299,23 @@ header.active .list a:hover,
 
 .slider {
   width: 100%;
-  min-width: 1188px;
+  min-width: 100%;
 }
 
 .arrivales-container {
+  margin: 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.arrivales { margin: 10px; }
+.arrivales { 
+  flex: 2;
+  flex-basis: 22%; 
+}
+
 .product-content { padding: 12px 0; }
 
 .arrivales img { 
@@ -434,7 +441,7 @@ header.active .list a:hover,
   flex-basis: 32.1%;
 }  
 
-.kryo-spec { position: relative; }
+.kryo-spec figure { position: relative; }
 
 .kryo-spec figcaption {
   padding: 35px;
@@ -459,7 +466,13 @@ header.active .list a:hover,
   padding: 20px 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.explore {
+  flex: 1;
+  flex-basis: 22%;
 }
 
 .gloves-size {
