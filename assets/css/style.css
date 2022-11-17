@@ -1137,3 +1137,21 @@ footer {
 }
 /*media query for 1024px to 1280px Ends */
 
+/* media query for 995px to 1023px Starts  */
+@media only screen and (min-width: 995px) and (max-width: 1023px) { 
+
+  .banner-content { padding-right: 20%;}
+  .discover-content { padding-right: 50%;}
+  .kryo-spec figcaption h3 { font-size: 24px; }
+   
+  .kryo-spec figcaption p { 
+    font-size: 14px;
+    line-height: 1.6; 
+  }
+
+  .kryo-spec figcaption { padding: 30px; }
+  .kryo-spec figcaption h4 { font-size: 14px; }
+  .goecobiking-section .wrapper { padding: 0 4.5%; }
+}
+/* media query for 995px to 1023px End  */
+
