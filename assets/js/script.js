@@ -183,7 +183,7 @@ function formValidation() {
       var sucessMessage = document.querySelector('.sucessMessage');
       setTimeout(function () {
         sucessMessage.remove();
-      }, 1500);
+      }, 2000);
       form.reset();
     } else {
       inputs.forEach(function (input) {
