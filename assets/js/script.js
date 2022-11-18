@@ -64,6 +64,7 @@ function modalFunction() {
         </div>
       `
       arrivalSection.append(div);
+      html.classList.add('stop-scroll')
       var modal = document.querySelector('.modal');
       var modalImage = document.querySelector('.modal-image figure img');
       var closeBtn = document.querySelector('.close-btn');
@@ -96,6 +97,7 @@ function modalFunction() {
         var modal = document.querySelector('.modal');
         modal.style.display = "none";
         div.remove();
+        html.classList.remove('stop-scroll')
       }
     })
   })
