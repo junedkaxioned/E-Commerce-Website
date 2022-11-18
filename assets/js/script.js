@@ -195,6 +195,63 @@ function formValidation() {
 }
 // Form Validation Function End
 
+// 
+
+function productPageFunctions() {
+
+  var catUrl = location.href.split("?");
+  var products = document.querySelectorAll('.product');
+  var breadcrumb = document.querySelector('.all-pro-breadcrumb');
+  var catHead = document.querySelector('.categories-heading');
+  var resultCount = document.querySelector('.result-number');
+  var searchForm = document.querySelector('.search-form');
+  var searchInput = document.querySelector('.search');
+  var productActive = document.querySelectorAll('.product-active');
+  var filterForm = document.querySelector('.filter-form');
+
+  breadcrumb.innerText = catUrl[1];
+  catHead.innerText = catUrl[1];
+  Object.assign(breadcrumb, { "href": location.href, "title": catUrl[1], })
+
+  // Filter By Category Functions
+  products.forEach(function (product) {
+    var dataCat = product.getAttribute('data-target');
+    if (dataCat === catUrl[1]) {
+      if (product.classList.contains("product-active")) {
+        product.classList.remove('product-active');
+      }
+      product.classList.add("product-active");
+      resultCount.innerText = productActive.length;
+    } else if (!catUrl[1]) {
+      product.classList.add('product-active');
+      breadcrumb.innerText = "All Product";
+      breadcrumb.setAttribute("title", "All Product");
+      catHead.innerText = "All Product";
+      resultCount.innerText = products.length;
+    }
+  })
+
+// Search Functionality
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (searchInput.value) {
+      products.forEach(function (product) {
+        var dataCat = product.getAttribute('data-target');
+        var productName = product.querySelector('.product-name').innerText;
+        if (dataCat === catUrl[1] || !catUrl[1]) {
+          if (product.classList.contains("product-active")) {
+            product.classList.remove('product-active');
+          }
+          if (productName.toLowerCase().match(searchInput.value.toLowerCase())) {
+            product.classList.add("product-active");
+          }
+          resultCount.innerText = productActive.length;
+        }
+      })
+    }
+  })
+}
+
 
 if (document.body.classList.contains("home-page")) {
   sliderFunction();
@@ -204,5 +261,5 @@ if (document.body.classList.contains("home-page")) {
   formValidation();
 
 } else if (document.body.classList.contains("product-page")) {
-
+  productPageFunctions();
 }
