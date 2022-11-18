@@ -1787,7 +1787,7 @@ footer {
 
   .star::after { font-size: 14px; }
   .product-name { padding: 7px 0 10px; }
-  .modal-image { top: 25%; }
+  .modal-image { top: -4%; }
   .stars { padding-bottom: 3px;}
   .discover-section { padding: 68px 0 22px; }
   .discover-content { padding: 35px 3% 35px 2.5%;}
