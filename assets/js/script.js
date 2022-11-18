@@ -195,8 +195,7 @@ function formValidation() {
 }
 // Form Validation Function End
 
-// 
-
+// Product Page Functions Start
 function productPageFunctions() {
 
   var catUrl = location.href.split("?");
@@ -206,8 +205,13 @@ function productPageFunctions() {
   var resultCount = document.querySelector('.result-number');
   var searchForm = document.querySelector('.search-form');
   var searchInput = document.querySelector('.search');
-  var productActive = document.querySelectorAll('.product-active');
   var filterForm = document.querySelector('.filter-form');
+  var thumbsize = 14;
+  var min = filterForm.querySelector('.min');
+  var max = filterForm.querySelector('.max');
+  var rangemin = parseInt(min.getAttribute('min'));
+  var rangemax = parseInt(max.getAttribute('max'));
+  var avgvalue = (rangemin + rangemax) / 2;
 
   breadcrumb.innerText = catUrl[1];
   catHead.innerText = catUrl[1];
@@ -221,6 +225,7 @@ function productPageFunctions() {
         product.classList.remove('product-active');
       }
       product.classList.add("product-active");
+      var productActive = document.querySelectorAll('.product-active');
       resultCount.innerText = productActive.length;
     } else if (!catUrl[1]) {
       product.classList.add('product-active');
@@ -231,7 +236,7 @@ function productPageFunctions() {
     }
   })
 
-// Search Functionality
+  // Search Functionality
   searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (searchInput.value) {
@@ -245,12 +250,101 @@ function productPageFunctions() {
           if (productName.toLowerCase().match(searchInput.value.toLowerCase())) {
             product.classList.add("product-active");
           }
+          var productActive = document.querySelectorAll('.product-active');
           resultCount.innerText = productActive.length;
         }
       })
     }
   })
+
+  // Function for getting Min Max Price
+  function draw(slider, splitvalue) {
+    var min = slider.querySelector('.min');
+    var max = slider.querySelector('.max');
+    var lower = slider.querySelector('.min-price');
+    var upper = slider.querySelector('.max-price');
+    var thumbsize = parseInt(slider.getAttribute('data-thumbsize'));
+    var rangewidth = parseInt(slider.getAttribute('data-rangewidth'));
+    var rangemin = parseInt(slider.getAttribute('data-rangemin'));
+    var rangemax = parseInt(slider.getAttribute('data-rangemax'));
+    var minWidthCondition = thumbsize + ((splitvalue - rangemin) / (rangemax - rangemin)) * (rangewidth - (2 * thumbsize));
+    var maxWidthCondition = thumbsize + ((rangemax - splitvalue) / (rangemax - rangemin)) * (rangewidth - (2 * thumbsize));
+    /* set min and max attributes */
+    min.setAttribute('max', splitvalue);
+    max.setAttribute('min', splitvalue);
+    /* set css */
+    min.style.width = parseInt(minWidthCondition) + 'px';
+    max.style.width = parseInt(maxWidthCondition) + 'px';
+    min.style.left = '0px';
+    max.style.left = parseInt(min.style.width) + 'px';
+    /* correct for 1 off at the end */
+    if (max.value > (rangemax - 1)) max.setAttribute('data-value', rangemax);
+    /* Value of min and max price */
+    max.value = max.getAttribute('data-value');
+    min.value = min.getAttribute('data-value');
+    lower.innerText = min.getAttribute('data-value');
+    upper.innerText = max.getAttribute('data-value');
+  }
+
+  /* Seting data-value */
+  min.setAttribute('data-value', rangemin);
+  max.setAttribute('data-value', rangemax);
+  /* Seting data vars */
+  filterForm.setAttribute('data-rangemin', rangemin);
+  filterForm.setAttribute('data-rangemax', rangemax);
+  filterForm.setAttribute('data-thumbsize', thumbsize);
+  filterForm.setAttribute('data-rangewidth', filterForm.offsetWidth);
+  /* Dynamic price */
+  var lower = filterForm.querySelector('.min-price');
+  var upper = filterForm.querySelector('.max-price');
+  lower.classList.add('lower', 'value');
+  upper.classList.add('upper', 'value');
+  lower.innerText = rangemin;
+  upper.innerText = rangemax;
+  draw(filterForm, avgvalue);
+  /* Events on inputs*/
+  min.addEventListener("input", function () { update(min); });
+  max.addEventListener("input", function () { update(max); });
+
+  function update(el) {
+    var slider = el.parentElement.parentElement;
+    var min = slider.querySelector('.min');
+    var max = slider.querySelector('.max');
+    var minvalue = Math.floor(min.value);
+    var maxvalue = Math.floor(max.value);
+    /* Seting inactive values before draw */
+    min.setAttribute('data-value', minvalue);
+    max.setAttribute('data-value', maxvalue);
+    var avgvalue = (minvalue + maxvalue) / 2;
+    /* Draw */
+    draw(slider, avgvalue);
+  }
+
+  // Filter By Price on Submit Function
+  filterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var minPrice = Number(filterForm.querySelector('.min-price').innerText);
+    var maxPrice = Number(filterForm.querySelector('.max-price').innerText);
+
+    products.forEach(function (product) {
+      var minProduct = Number(product.getAttribute("data-min"));
+      var maxProduct = Number(product.getAttribute("data-max"));
+      var dataCat = product.getAttribute('data-target');
+      var minProductCondition = (minProduct >= minPrice) && (minProduct <= maxPrice);
+      var maxProductCondition = (maxProduct >= minPrice) && (maxProduct <= maxPrice);
+      var conditionValid = ( minProductCondition || maxProductCondition) && ((dataCat == catUrl[1]) || !catUrl[1]);
+      // Checking Condition
+      if (conditionValid) {
+        product.classList.add('product-active');
+      } else {
+        product.classList.remove('product-active');
+      }
+      var productActive = document.querySelectorAll('.product-active');
+      resultCount.innerText = productActive.length;
+    })
+  })
 }
+// Product Page Functions End
 
 
 if (document.body.classList.contains("home-page")) {
