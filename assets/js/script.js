@@ -1,4 +1,3 @@
-
 var html = document.querySelector('html');
 var header = document.querySelector("header");
 var hamBurger = document.querySelector('.hamburger');
@@ -35,10 +34,11 @@ function sliderFunction() {
   var containerDimension = slider.getBoundingClientRect();
   var containerWidth = containerDimension.width;
 
+  // Events on Next Slide Button
   slideNextBtn.addEventListener('click', function () {
     slider.scrollLeft += containerWidth;
   })
-
+  // Events on Previous Slide Button
   slidePrevBtn.addEventListener('click', function () {
     slider.scrollLeft -= containerWidth;
   })
@@ -49,25 +49,27 @@ function sliderFunction() {
 function modalFunction() {
   var arrivalImage = document.querySelectorAll(".image");
   var arrivalSection = document.querySelector('.new-arrivales-section .wrapper');
+
   arrivalImage.forEach(function (img) {
     img.addEventListener('click', function () {
       var div = document.createElement('div');
       div.classList.add('modal');
       div.innerHTML = `<div class="wrapper">
-      <div class="modal-image">
-      <figure>
-      <img>
-      </figure>
-      </div>
-      <span class="close-btn">Close</span>
-      </div>`
+        <div class="modal-image">
+        <figure>
+        <img>
+        </figure>
+        </div>
+        <span class="close-btn">Close</span>
+        </div>
+      `
       arrivalSection.append(div);
       var modal = document.querySelector('.modal');
       var modalImage = document.querySelector('.modal-image figure img');
       var closeBtn = document.querySelector('.close-btn');
       modalImage.src = img.src;
-      console.log(img);
 
+      // Event on Escape Button to close modal
       window.addEventListener('keydown', function (e) {
         if (e.key == "Escape") {
           closeModal();
@@ -100,6 +102,98 @@ function modalFunction() {
 }
 // Modal Function End
 
+// Form Validation Function start
+function formValidation() {
+  var fisrtName = document.querySelector('.first-name');
+  var lastName = document.querySelector('.last-name');
+  var email = document.querySelector('.email-address');
+  var textarea = document.querySelector('.textarea');
+  var form = document.querySelector('.form-contact');
+  var inputs = document.querySelectorAll('.input');
+  var submitButton = document.querySelector('.submit');
+  var nameReg = /^[a-zA-Z]+$/;
+  var emailReg = /^([A-Za-z][A-Za-z0-9\-\_\.]+[A-Za-z0-9])\@([A-Za-z]{2,})\.([A-Za-z]{2,})$/;
+  var messageReg = /^([a-zA-Z0-9][a-zA-Z0-9@\s /-]+)$/;
+
+  // Function for getting inputs and removing error (blur)
+  inputs.forEach(function (input) {
+    input.addEventListener('blur', function () {
+      formErrors(input);
+    })
+    input.addEventListener('keyup', function () {
+      formErrors(input);
+    })
+  })
+
+  // function for Error
+  function formErrors(input) {
+    var inputError = input.parentElement.children[1];
+
+    // Conditon for input error
+    if (!input.value) {
+      // input form
+      inputError.classList.add('show')
+      inputError.innerText = "Enter Your " + input.name;
+    } else {
+      inputError.classList.remove('show')
+
+      // VALIDATION
+      // Condition for Address
+      if (input.name == "Email Address") {
+        if (emailReg.test(input.value)) {
+          inputError.classList.remove('show')
+        } else {
+          inputError.classList.add('show')
+          inputError.innerText = "Email must be in abcd@abcd.abc";
+        }
+      } else if (input.name == "Message") {
+        if (messageReg.test(input.value)) {
+          inputError.classList.remove('show')
+        } else {
+          inputError.classList.add('show')
+          inputError.innerText = "Symbols are Not Allowed";
+        }
+      } else {
+        // Condition for Names
+        if (nameReg.test(input.value)) {
+          inputError.classList.remove('show')
+        } else {
+          inputError.classList.add('show')
+          inputError.innerText = "Numbers and Symbol Not Allowed";
+        }
+      }
+    }
+  }
+
+  // Events on Submit button
+  submitButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    var activeError = form.querySelectorAll('.show');
+    var formDiv = document.querySelector('.contact-left')
+
+    // Conditon for input in filled or not
+    if (fisrtName.value && email.value && textarea.value && lastName.value && (activeError.length === 0)) {
+      var div = document.createElement('div');
+      div.classList.add('sucessMessage');
+      div.innerHTML = `
+          <span class="section-heading success-text">Form Submited</span>
+          <p class ="text">Thank you for filling out your information!</p>
+        `
+      formDiv.append(div);
+      var sucessMessage = document.querySelector('.sucessMessage');
+      setTimeout(function () {
+        sucessMessage.remove();
+      }, 1500);
+      form.reset();
+    } else {
+      inputs.forEach(function (input) {
+        formErrors(input);
+      })
+    }
+  })
+
+}
+// Form Validation Function End
 
 
 if (document.body.classList.contains("home-page")) {
@@ -107,6 +201,7 @@ if (document.body.classList.contains("home-page")) {
   modalFunction();
 
 } else if (document.body.classList.contains("contact-page")) {
+  formValidation();
 
 } else if (document.body.classList.contains("product-page")) {
 
