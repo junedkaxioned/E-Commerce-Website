@@ -511,16 +511,16 @@ header .wrapper {
 .modal { 
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: 5;
+  position: fixed;
+  z-index: 999999;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  -webkit-transition: .6s;
-  -o-transition: .6s;
-  transition: .6s;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
 }
 
 .modal .wrapper {
@@ -543,8 +543,8 @@ header .wrapper {
 .modal-image { 
   width: 95%; 
   position: relative;
-  -webkit-animation: zoom .7s forwards;
-  animation: zoom .7s forwards;
+  -webkit-animation: zoom .3s forwards;
+  animation: zoom .3s forwards;
 } 
 
 @-webkit-keyframes zoom {
@@ -1526,6 +1526,7 @@ footer {
   font-family: "FontAwesome";
   font-size: 18px;
   text-indent: -9999px;
+  transition: .5s;
 }
 
 .facebook::after { content: "\f082"; }
@@ -1591,6 +1592,8 @@ footer {
     border: 3px solid #DF453E;
     color: #DF453E;
   }
+
+  .icon:hover { color: #DF453E; }
 
   .filter-submit:hover { color: #32373C; }
 
