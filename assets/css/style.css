@@ -90,8 +90,8 @@ sub { bottom: -.25em; }
 body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
   overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 a { 
@@ -426,9 +426,9 @@ header .wrapper {
 
 .star::after {
   content: "\f005";
+  float: left;
   color: #4B4F58;
   font-family: "FontAwesome";
-  float: left;
   text-indent: 0;
 }
 
@@ -822,9 +822,9 @@ header .wrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  float: left;
   font-family: "FontAwesome";
   font-size: 24px;
-  float: left;
   text-indent: 0; 
   -webkit-transition: .5s; 
   -o-transition: .5s; 
@@ -1234,9 +1234,9 @@ iframe { width: 100%; }
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  float: left ;
   font-family: "FontAwesome";
   font-size: 16px;
-  float: left ;
   text-indent: 0;
 }
 
