@@ -1526,6 +1526,7 @@ footer {
   font-family: "FontAwesome";
   font-size: 18px;
   text-indent: -9999px;
+  transition: .5s;
 }
 
 .facebook::after { content: "\f082"; }
@@ -1591,6 +1592,8 @@ footer {
     border: 3px solid #DF453E;
     color: #DF453E;
   }
+
+  .icon:hover { color: #DF453E; }
 
   .filter-submit:hover { color: #32373C; }
 
